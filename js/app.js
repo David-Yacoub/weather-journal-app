@@ -12,7 +12,7 @@ document.getElementById('generate').addEventListener('click', performAction);
 
 function performAction(e) {
     let zipCode = document.getElementById('zip').value;
-    let baseURL = `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}&units=metric`;
+    let baseURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}&units=metric`;
     const feelings = document.getElementById('feelings').value;
     getWeather(baseURL)
         .then(function(data) {
