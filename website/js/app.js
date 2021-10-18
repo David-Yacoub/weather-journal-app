@@ -23,23 +23,22 @@ function performAction(e) {
         )
 
 }
+
 const getWeather = async(baseURL) => {
+    const res = await fetch(baseURL)
+    try {
 
-
-        const res = await fetch(baseURL)
-        try {
-            const data = await res.json();
-            return data;
-
-
-        } catch (error) {
-            alert('Please Insert a valid Zipcode')
-            console.log("error", error);
-            // appropriately handle the error
-        }
-
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        alert('Please Insert a valid Zipcode')
+        console.log("error", error);
+        // appropriately handle the error
     }
-    // post data to server
+
+}
+
+// post data to server
 
 const postData = async(url = '', data = {}) => {
     const response = await fetch(url, {
